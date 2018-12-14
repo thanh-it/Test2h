@@ -5,46 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MapsActivity">
-
-<fragment
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:id="@+id/ll4"
+    android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="fill_parent"
+        android:hint="Tiêu đề"
+        android:id="@+id/title"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/v"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:hint="Kinh độ" />
+    <EditText
+        android:id="@+id/v1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v"
+        android:hint="Vĩ độ" />
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/test"
+        android:layout_width="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_below="@id/v1"
+        android:layout_height="wrap_content">
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Thêm"
+            android:layout_below="@id/v1"
             android:layout_weight="1"
             android:id="@+id/btn_add"/>
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Danh sách vị trí"
-            android:id="@+id/btn_update"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_height="wrap_content">
-        <Button
             android:layout_width="50dp"
-            android:background="@drawable/zoom"
             android:layout_height="50dp"
+            android:text="Sửa"
             android:id="@+id/zoom"/>
         <Button
             android:layout_width="50dp"
-            android:background="@drawable/in"
+            android:text="Xóa"
             android:layout_height="50dp"
             android:id="@+id/out"/>
     </LinearLayout>
+
+</RelativeLayout>
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_below="@+id/ll4"
+    android:layout_height="match_parent" />
+
 </RelativeLayout>

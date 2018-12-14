@@ -50,8 +50,8 @@ public class MapDAO {
         values.put("TITLE",p.tiltles);
         return db.update("MAP",values,"ID=?",new String[]{String.valueOf(p.id)});
     }
-    public int delete(int id){
-        return db.delete("MAP","ID=?",new String[]{String.valueOf(id)});
+    public double delete(double p){
+        return db.delete("MAP","V=?",new String[]{String.valueOf(p)});
     }
 
 }
